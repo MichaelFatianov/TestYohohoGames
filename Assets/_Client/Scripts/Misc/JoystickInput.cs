@@ -9,23 +9,24 @@ public class JoystickInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private Vector3 _startPoint;  
     
     private static Vector3 _input; 
-    public static Vector3 JInput => _input; 
+    public static Vector3 Input => _input; 
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        _joystickBody.transform.position = Input.mousePosition;
-        _startPoint = Input.mousePosition;
+        _joystickBody.transform.position = UnityEngine.Input.mousePosition;
+        _startPoint = UnityEngine.Input.mousePosition;
         _joystickBody.SetActive(true);
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
         _joystickBody.SetActive(false);
+        _input = Vector3.zero;
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        _input = _startPoint + Vector3.ClampMagnitude(Input.mousePosition - _startPoint, 25f);
-        _knob.transform.position = _input;        
+        _input = UnityEngine.Input.mousePosition - _startPoint;
+        _knob.transform.position = _startPoint + Vector3.ClampMagnitude(_input, 25f);    
     }
 }

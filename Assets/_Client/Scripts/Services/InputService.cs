@@ -4,6 +4,6 @@ public class InputService
 {
     public Vector3 GetInput()
     {
-        return JoystickInput.JInput;
+        return JoystickInput.Input;
     }
 }
