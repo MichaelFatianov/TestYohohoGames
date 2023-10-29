@@ -1,5 +1,5 @@
 ﻿public enum TransferType
 {
-    FromCollidedStack,
-    ToCollidedStack 
+    FromCollidedStorage,
+    ToCollidedStorage 
 }

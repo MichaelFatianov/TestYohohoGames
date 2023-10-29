@@ -1,5 +1,4 @@
 using Leopotam.Ecs;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace YohohoTest
@@ -8,7 +7,7 @@ namespace YohohoTest
     {
 
         [SerializeField] private GameObject _mesh;
-        [SerializeField] private int _maxStackCapacity;
+        [SerializeField] private int _maxCapacity;
         [SerializeField] private Transform _itemsPosition;
 
         public GameObject Mesh => _mesh; 
@@ -21,11 +20,10 @@ namespace YohohoTest
                 {
                     View = this
                 })
-                .Replace(new ItemStack
+                .Replace(new ItemStorage
                 {
-                    Stack = new Stack<EcsEntity>(),
-                    ItemPlace = _itemsPosition,
-                    MaxCapacity = _maxStackCapacity
+                    BoundedStack = new BoundedStack<EcsEntity>("Player", _maxCapacity),
+                    ItemPlace = _itemsPosition
                 });
          
         }       

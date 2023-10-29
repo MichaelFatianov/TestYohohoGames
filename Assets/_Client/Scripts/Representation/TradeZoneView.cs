@@ -1,5 +1,4 @@
 using Leopotam.Ecs;
-using System.Collections.Generic;
 using UnityEngine;
 using YohohoTest;
 
@@ -16,16 +15,14 @@ public class TradeZoneView : EntityView
 
         entity
             .Replace(new TradeZone { })
-            .Replace(new ItemStack
+            .Replace(new ItemStorage
             {
-                Stack = new Stack<EcsEntity>(),
+                BoundedStack = new BoundedStack<EcsEntity>("Trade Zone",_maxCapacity),
                 ItemPlace = _itemsPosition,
-                MaxCapacity = _maxCapacity,
-                CurrentAmount = 0
             })
             .Replace(new TransferProvider
             {
-                TransferType = TransferType.FromCollidedStack
+                TransferType = TransferType.FromCollidedStorage
             });
     }
 

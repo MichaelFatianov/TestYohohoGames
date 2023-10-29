@@ -16,9 +16,12 @@ MonoBehaviour:
   - _name: Cookie
     _type: 0
     _view: {fileID: 8663346778719456716, guid: e61e2f8f4a276914692bd1663b4b9d38, type: 3}
+    _cost: 3
   - _name: Cupcake
     _type: 1
     _view: {fileID: 8449045897173369490, guid: b844c4ade86d4fc4aa317e287c6d5f2d, type: 3}
-  - _name: Sanwich
+    _cost: 8
+  - _name: Sandwich
     _type: 2
     _view: {fileID: 2307636055411323399, guid: 9f6e8324dfea1b447a656997d06040cb, type: 3}
+    _cost: 12

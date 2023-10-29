@@ -1,14 +1,11 @@
 ﻿using Leopotam.Ecs;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace YohohoTest
 {
-    public struct ItemStack
+    public struct ItemStorage
     {
-        public Stack<EcsEntity> Stack;
+        public BoundedStack<EcsEntity> BoundedStack;
         public Transform ItemPlace;
-        public int MaxCapacity;
-        public int CurrentAmount;
     }
 }

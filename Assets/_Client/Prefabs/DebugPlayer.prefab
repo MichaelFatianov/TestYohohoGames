@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mesh: {fileID: 6294546815523763093}
-  _maxStackCapacity: 4
+  _maxCapacity: 4
   _itemsPosition: {fileID: 71918343}
 --- !u!143 &2060415227
 CharacterController:

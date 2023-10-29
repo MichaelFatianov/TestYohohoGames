@@ -1,5 +1,4 @@
 using Leopotam.Ecs;
-using System.Collections.Generic;
 using UnityEngine;
 using YohohoTest;
 
@@ -9,6 +8,7 @@ public class SpawnView : EntityView
 
     [SerializeField] private Transform _spawnPoint;
     [SerializeField] private ItemType _itemType;
+
     [SerializeField] private int _maxCapacity;
     [SerializeField] private float _timerThreshold;
 
@@ -26,16 +26,14 @@ public class SpawnView : EntityView
                 Threshold = _timerThreshold,
                 CurrentTime = 0f
             })
-            .Replace(new ItemStack
+            .Replace(new ItemStorage
             {
-                Stack = new Stack<EcsEntity>(),
+                BoundedStack = new BoundedStack<EcsEntity>(_itemType.ToString(), _maxCapacity),
                 ItemPlace = _spawnPoint,
-                MaxCapacity = _maxCapacity,
-                CurrentAmount = 0
             })
             .Replace(new TransferProvider
             {
-                TransferType = TransferType.ToCollidedStack
+                TransferType = TransferType.ToCollidedStorage
             });
     }
 }
