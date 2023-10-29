@@ -9,7 +9,7 @@ namespace YohohoTest
         [SerializeField] private float _caseSpawnTimer;
         [SerializeField] private int _stackCapacity;
 
-        [SerializeField] private MoneyCaseView _moneyCasePrefab;
+        [SerializeField] private ItemView _moneyCasePrefab;
 
         public float PlayerSpeed => _playerSpeed;
 
@@ -17,6 +17,6 @@ namespace YohohoTest
 
         public int StackCapacity  => _stackCapacity;
 
-        public MoneyCaseView MoneyCasePrefab => _moneyCasePrefab;
+        public ItemView MoneyCasePrefab => _moneyCasePrefab;
     }
 }

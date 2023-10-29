@@ -177,3 +177,4 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _gameSettings: {fileID: 11400000, guid: 7b6fb360f4723564c99b20901c1df548, type: 2}
+  _itemsDatabase: {fileID: 11400000, guid: e758e7075d54b6e41a01cdd88783d0c4, type: 2}

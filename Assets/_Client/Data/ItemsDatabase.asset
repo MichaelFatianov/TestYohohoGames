@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93e058d369022d646b70a20942a5ff19, type: 3}
+  m_Name: ItemsDatabase
+  m_EditorClassIdentifier: 
+  _itemsData:
+  - _name: Cookie
+    _type: 0
+    _view: {fileID: 8663346778719456716, guid: e61e2f8f4a276914692bd1663b4b9d38, type: 3}
+  - _name: Cupcake
+    _type: 1
+    _view: {fileID: 8449045897173369490, guid: b844c4ade86d4fc4aa317e287c6d5f2d, type: 3}
+  - _name: Sanwich
+    _type: 2
+    _view: {fileID: 2307636055411323399, guid: 9f6e8324dfea1b447a656997d06040cb, type: 3}

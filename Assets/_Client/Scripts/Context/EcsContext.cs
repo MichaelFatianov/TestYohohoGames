@@ -15,8 +15,8 @@ public class EcsContext : MonoBehaviour
     private bool _ecsSystemsInitialized = false;
 
     [SerializeField] private AssetReference[] _scenes;
-
     [SerializeField] private Settings _gameSettings;
+    [SerializeField] private ItemsDatabase _itemsDatabase;
 
     void Awake()
     {
@@ -39,12 +39,18 @@ public class EcsContext : MonoBehaviour
 
         _updateSystems
                 .Add(new MovementSystem())
-                .Add(new PickupSystem())
-                .Add(new SpawnZoneSystem())
+                .Add(new CollisionSystem())
+                .Add(new TimerSystem())
+                .Add(new SpawnSystem())
+                .Add(new ItemTransferSystem())      
+                .Add(new TransferAnimationSystem())
+                .OneFrame<Collision>()
                 .OneFrame<Pickup>()
                 .OneFrame<Dispose>()
+                .OneFrame<Transfer>()
                 .Inject(inputService)
                 .Inject(_gameSettings)
+                .Inject(_itemsDatabase)
                 ;
 
         _updateSystems.ProcessInjects();
