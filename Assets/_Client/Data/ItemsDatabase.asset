@@ -17,11 +17,14 @@ MonoBehaviour:
     _type: 0
     _view: {fileID: 8663346778719456716, guid: e61e2f8f4a276914692bd1663b4b9d38, type: 3}
     _cost: 3
+    _sprite: {fileID: 21300000, guid: 4a2e5ee9c19db54448b3e5e45ce6899d, type: 3}
   - _name: Cupcake
     _type: 1
     _view: {fileID: 8449045897173369490, guid: b844c4ade86d4fc4aa317e287c6d5f2d, type: 3}
     _cost: 8
+    _sprite: {fileID: 21300000, guid: b5193158fd109034a94653f3e6514898, type: 3}
   - _name: Sandwich
     _type: 2
     _view: {fileID: 2307636055411323399, guid: 9f6e8324dfea1b447a656997d06040cb, type: 3}
     _cost: 12
+    _sprite: {fileID: 21300000, guid: 5c60b7745bbae5b4e9e8fa475686cb51, type: 3}

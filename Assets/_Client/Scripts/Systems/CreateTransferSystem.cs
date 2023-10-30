@@ -36,6 +36,9 @@ public class CreateTransferSystem : IEcsRunSystem
                                         From = otherStorage,
                                         To = itemStorage
                                     });
+
+                                    otherEntity.Replace(new StorageChanged());
+                                    entity.Replace(new StorageChanged());
                                 }
                                     
                                 break;
@@ -48,9 +51,14 @@ public class CreateTransferSystem : IEcsRunSystem
                                         From = itemStorage,
                                         To = otherStorage
                                     });
+
+                                    otherEntity.Replace(new StorageChanged());
+                                    entity.Replace(new StorageChanged());
                                 }                                   
                                 break;
-                        }                                           
+                        }
+
+                    
                 }
             }
         }
