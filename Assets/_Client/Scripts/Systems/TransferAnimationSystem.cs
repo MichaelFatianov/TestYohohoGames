@@ -20,7 +20,7 @@ public class TransferAnimationSystem : IEcsRunSystem
             var item = itemView.Entity.Get<Item>();
             var delta = Vector3.up * itemView.PositionInStack * 0.25f;
 
-            itemView.gameObject.transform.DOMove(destination.position, 0.2f).SetEase(Ease.OutQuad).OnComplete(() => EndTransition(itemTransform, destination, delta));
+            itemView.gameObject.transform.DOMove(destination.position, 0.25f).SetEase(Ease.OutQuad).OnComplete(() => EndTransition(itemTransform, destination, delta));
         }
     }
 

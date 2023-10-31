@@ -97,7 +97,7 @@ MonoBehaviour:
   _spawnPoint: {fileID: 924700646974109939}
   _itemType: 0
   _maxCapacity: 4
-  _timerThreshold: 3
+  _timerThreshold: 4
 --- !u!114 &924700647357848524
 MonoBehaviour:
   m_ObjectHideFlags: 0

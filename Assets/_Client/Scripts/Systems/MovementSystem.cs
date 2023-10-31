@@ -16,12 +16,12 @@ namespace YohohoTest
             ref var playerRef = ref _filter.Get2(0);
             ref var player = ref _filter.Get1(0);
 
-            var input = _inputService.GetInput().normalized;
+            var input = _inputService.GetInput();
 
             var movement = new Vector3(input.x, 0 , input.y);
-            var velocity = movement * _settings.PlayerSpeed;
+            var velocity = movement * _settings.PlayerSpeed * Time.deltaTime;
             player.isMoving = velocity.magnitude > 0;
-            playerRef.View.Controller.Move(velocity);            
+            playerRef.View.Controller.Move(velocity);
             playerRef.View.Mesh.transform.LookAt(playerRef.View.transform.position + movement);
         }
     }

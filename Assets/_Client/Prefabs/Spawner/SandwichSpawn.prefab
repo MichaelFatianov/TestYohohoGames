@@ -352,7 +352,7 @@ MonoBehaviour:
   _spawnPoint: {fileID: 2682141428006651074}
   _itemType: 2
   _maxCapacity: 4
-  _timerThreshold: 8
+  _timerThreshold: 9
 --- !u!114 &2682141428692527079
 MonoBehaviour:
   m_ObjectHideFlags: 0

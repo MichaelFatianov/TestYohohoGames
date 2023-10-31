@@ -16,7 +16,7 @@ MonoBehaviour:
   - _name: Cookie
     _type: 0
     _view: {fileID: 8663346778719456716, guid: e61e2f8f4a276914692bd1663b4b9d38, type: 3}
-    _cost: 3
+    _cost: 4
     _sprite: {fileID: 21300000, guid: 4a2e5ee9c19db54448b3e5e45ce6899d, type: 3}
   - _name: Cupcake
     _type: 1

@@ -4313,10 +4313,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -3647237605499221453, guid: bd0bc02b46a3f1e4db31a000f68effe8, type: 3}
-      propertyPath: _animator
-      value: 
-      objectReference: {fileID: 1023501168}
     - target: {fileID: 763282025828243516, guid: bd0bc02b46a3f1e4db31a000f68effe8, type: 3}
       propertyPath: m_Name
       value: PlayerAdv
@@ -4367,11 +4363,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bd0bc02b46a3f1e4db31a000f68effe8, type: 3}
---- !u!95 &1023501168 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1311129384893081907, guid: bd0bc02b46a3f1e4db31a000f68effe8, type: 3}
-  m_PrefabInstance: {fileID: 1023501167}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1051046362
 PrefabInstance:
   m_ObjectHideFlags: 0

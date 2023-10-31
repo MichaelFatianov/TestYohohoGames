@@ -26,7 +26,8 @@ public class JoystickInput : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void OnDrag(PointerEventData eventData)
     {
-        _input = UnityEngine.Input.mousePosition - _startPoint;
-        _knob.transform.position = _startPoint + Vector3.ClampMagnitude(_input, 25f);    
+        var rawInput = UnityEngine.Input.mousePosition - _startPoint;
+        _knob.transform.position = _startPoint + Vector3.ClampMagnitude(rawInput, 25f);
+        _input = _knob.transform.localPosition.normalized;
     }
 }
