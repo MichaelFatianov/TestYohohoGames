@@ -40,6 +40,7 @@ public class EcsContext : MonoBehaviour
         _updateSystems
                 .Add(new TimerSystem())
                 .Add(new MovementSystem())
+                .Add(new PlayerAnimationSystem())
                 .Add(new CollisionSystem())                
                 .Add(new SpawnSystem())
                 .Add(new CreateTransferSystem())

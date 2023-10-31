@@ -41,5 +41,19 @@ namespace YohohoTest
             return _stack.Pop();
         }
 
+        public T[] GetReversedArray()
+        {
+            var finalArray = new T[MaxCapacity];
+            var stackArray =  _stack.ToArray();
+
+            for(var i = 0; i < stackArray.Length; i++)
+            {               
+                var stackItem = stackArray[stackArray.Length - (i+1)];
+                finalArray[i] = stackItem;               
+            }
+
+            return finalArray;
+        }
+
     }   
 }

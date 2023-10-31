@@ -15,7 +15,6 @@ public class TradeSystem : IEcsRunSystem
         {
             ref var tradeOperation = ref _filter.Get1(index);
             playerAccount.MoneyValue += tradeOperation.Value;
-            Debug.Log("Total amount of money: " + playerAccount.MoneyValue);
         }
     }
 }
