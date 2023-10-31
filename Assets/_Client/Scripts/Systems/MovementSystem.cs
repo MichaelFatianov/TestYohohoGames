@@ -19,7 +19,7 @@ namespace YohohoTest
             var input = _inputService.GetInput();
 
             var movement = new Vector3(input.x, 0 , input.y);
-            var velocity = movement * _settings.PlayerSpeed * Time.deltaTime;
+            var velocity = movement * _settings.PlayerSpeed * Time.fixedDeltaTime;
             player.isMoving = velocity.magnitude > 0;
             playerRef.View.Controller.Move(velocity);
             playerRef.View.Mesh.transform.LookAt(playerRef.View.transform.position + movement);

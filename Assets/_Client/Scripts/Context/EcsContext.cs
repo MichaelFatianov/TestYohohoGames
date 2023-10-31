@@ -8,6 +8,7 @@ public class EcsContext : MonoBehaviour
 {
     private EcsWorld _world;
     private EcsSystems _updateSystems;
+    private EcsSystems _fixedUpdateSystems;
 
     public static EcsContext Instance;
     public EcsWorld World => _world;
@@ -20,13 +21,17 @@ public class EcsContext : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 60;
+
         Instance = this;
         _world= new EcsWorld();
         _updateSystems = new EcsSystems(_world);
+        _fixedUpdateSystems = new EcsSystems(_world);
 
 #if UNITY_EDITOR
         Leopotam.Ecs.UnityIntegration.EcsWorldObserver.Create(_world);
         Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_updateSystems);
+        Leopotam.Ecs.UnityIntegration.EcsSystemsObserver.Create(_fixedUpdateSystems);
 #endif
 
         InitializeSystems();
@@ -39,7 +44,7 @@ public class EcsContext : MonoBehaviour
 
         _updateSystems
                 .Add(new TimerSystem())
-                .Add(new MovementSystem())
+                //.Add(new MovementSystem())
                 .Add(new PlayerAnimationSystem())
                 .Add(new CollisionSystem())                
                 .Add(new SpawnSystem())
@@ -55,13 +60,21 @@ public class EcsContext : MonoBehaviour
                 .OneFrame<TransferAnimation>()
                 .OneFrame<TradeOperation>()
                 .OneFrame<StorageChanged>()
-                .Inject(inputService)
+                //.Inject(inputService)
                 .Inject(_gameSettings)
                 .Inject(_itemsDatabase)
                 ;
 
+        _fixedUpdateSystems
+            .Add(new MovementSystem())
+            .Inject(inputService)
+            .Inject(_gameSettings);
+
         _updateSystems.ProcessInjects();
         _updateSystems.Init();
+
+        _fixedUpdateSystems.ProcessInjects();
+        _fixedUpdateSystems.Init();
 
         _ecsSystemsInitialized = true;
     }
@@ -78,6 +91,12 @@ public class EcsContext : MonoBehaviour
     {
         if (!_ecsSystemsInitialized) return;
         _updateSystems?.Run();
+    }
+
+    void FixedUpdate()
+    {
+        if (!_ecsSystemsInitialized) return;
+        _fixedUpdateSystems?.Run();
     }
 
     private void OnDestroy()
