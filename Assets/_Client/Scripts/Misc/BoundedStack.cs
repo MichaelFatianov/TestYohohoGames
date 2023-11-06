@@ -1,12 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using System.Collections.Generic;
 
 namespace YohohoTest
 {
     public class BoundedStack<T>
     {
-
         private string _name;
         private Stack<T> _stack;
         private int _maxCapacity;  

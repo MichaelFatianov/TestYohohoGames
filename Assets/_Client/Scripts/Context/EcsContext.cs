@@ -44,9 +44,7 @@ public class EcsContext : MonoBehaviour
 
         _updateSystems
                 .Add(new TimerSystem())
-                //.Add(new MovementSystem())
-                .Add(new PlayerAnimationSystem())
-                .Add(new CollisionSystem())                
+                .Add(new PlayerAnimationSystem())          
                 .Add(new SpawnSystem())
                 .Add(new CreateTransferSystem())
                 .Add(new TransferOperationSystem())
@@ -60,7 +58,6 @@ public class EcsContext : MonoBehaviour
                 .OneFrame<TransferAnimation>()
                 .OneFrame<TradeOperation>()
                 .OneFrame<StorageChanged>()
-                //.Inject(inputService)
                 .Inject(_gameSettings)
                 .Inject(_itemsDatabase)
                 ;

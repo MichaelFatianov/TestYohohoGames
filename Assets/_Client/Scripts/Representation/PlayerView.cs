@@ -12,7 +12,6 @@ namespace YohohoTest
         [SerializeField] private CharacterController _controller;
         [SerializeField] private Animator _animator;
 
-
         public GameObject Mesh => _mesh;
 
         public CharacterController Controller => _controller;

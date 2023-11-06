@@ -1,5 +1,4 @@
 using Leopotam.Ecs;
-using UnityEngine;
 using YohohoTest;
 
 public class CreateTransferSystem : IEcsRunSystem
@@ -56,9 +55,7 @@ public class CreateTransferSystem : IEcsRunSystem
                                     entity.Replace(new StorageChanged());
                                 }                                   
                                 break;
-                        }
-
-                    
+                        }                    
                 }
             }
         }

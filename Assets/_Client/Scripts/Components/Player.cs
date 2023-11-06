@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace YohohoTest
 {
     public struct Player

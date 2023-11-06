@@ -1,5 +1,4 @@
 using Leopotam.Ecs;
-using System.Collections.Generic;
 using YohohoTest;
 
 public class ShowItemUISystem : IEcsRunSystem
@@ -8,8 +7,6 @@ public class ShowItemUISystem : IEcsRunSystem
 
     private EcsFilter<Player, ItemStorage, StorageChanged> _playerFilter;
     private EcsFilter<ItemUIRef> _uiFilter;
-
-    private List<ItemUIRef> _itemUIs;
 
     public void Run()
     {

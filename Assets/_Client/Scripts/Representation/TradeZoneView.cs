@@ -25,5 +25,4 @@ public class TradeZoneView : EntityView
                 TransferType = TransferType.FromCollidedStorage
             });
     }
-
 }

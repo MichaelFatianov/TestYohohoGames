@@ -1,6 +1,5 @@
 using Leopotam.Ecs;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace YohohoTest
 {
